@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Gray Area Addressable LED Workshop</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <figure>
+                    <h2 class="intro">Addressable LED Workshop</h2 class="intro">
+                    <h2 class="intro">Addressable LED Workshop</h2 class="intro">
+                    <h2 class="intro">Addressable LED Workshop</h2 class="intro">
+                    <h2 class="intro">Addressable LED Workshop</h2 class="intro">
+                </figure>
+            </section>
+
+            <section data-background="https://openclipart.org/download/208615/evil-robot-glitch-remix.svg" data-background-transition="zoom">
+                <br>
+                <p>Code Here:<b><br><a href="http://bit.ly/2kUhjBH">http://bit.ly/2kUhjBH</a></b></p>
+            </section>
+            <section>
+                <ul>
+                    <h3>Topics for Today:</h3>
+                    <li class="fragment">Meet and Greet</li>
+                    <li class="fragment">Parts Check and Overview</li>
+                    <li class="fragment">Introduction to Addressable LEDs</li>
+                    <li class="fragment">How to Solder</li>
+                    <li class="fragment">Programming</li>
+                    <li class="fragment">Persistence of Vision(POV)</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Parts Check and Overview</h3>
+            </section>
+            <section>
+                <h3>Trinket Pro 5v</h3>
+                <img src="img/trinketpro.jpg">
+            </section>
+            <section>
+                <h3>LiPo Lithium Ion Polymer Battery</h3>
+                <img src="img/lipo.jpg">
+            </section>
+            <section>
+                <h3>Voltage Booster</h3>
+                <img src="img/booster.png">
+            </section>
+            <section>
+                <h3>APA102 LED Strip</h3>
+                <img src="img/apa102.png">
+            </section>
+            <section>
+                <h3>Acrylic Wand</h3>
+            </section>
+            <section>
+                <h3>Velcro</h3>
+            </section>
+            <section>
+                <h3>Length of Paracord</h3>
+            </section>
+            <section>
+                <h3>Initial Prep</h3>
+            </section>
+            <section>
+                <h3>Plug the battery into the charger and Plug it into you USB port</h3>
+                <img src="img/charger.png">
+            </section>
+            <section>
+                <h3>Setting up the Arduino IDE</h3>
+                <img src="img/trinketpro.jpg">
+            </section>
+            <section>
+                <h3>If you are Windows, Install this Driver </h3>
+                <a href="https://learn.adafruit.com/introducing-pro-trinket/windows-setup">Driver</a>
+            </section>
+            <section>
+                <h3>Open Arduino -> Go to Preferences</h3>
+                <img src="img/ard.png">
+            </section>
+            <section>
+                <p>Paste This URL in the Additional Boards Manager</p>
+                <img src="img/pref.png" height="400">
+                <p>https://adafruit.github.io/arduino-board-index/package_adafruit_index.json</p>
+            </section>
+            <section>
+                <h3>Next Open the Boards Manager</h3>
+                <img src="img/bm.png">
+            </section>
+            <section>
+                <h3>Search for Adafruit and install the Adafruit AVR Boards Manager</h3>
+                <img src="img/ada1.png">
+            </section>
+            <section>
+                <h3>Now open the Library Manager</h3>
+                <img src="img/lm.png">
+            </section>
+            <section>
+                <h3>Serch for dotstar and install</h3>
+                <img src="img/dotstar.png">
+            </section>
+            <section>
+                <h3>Introduction to Addressable LEDS</h3>
+                <img src="img/wsring.png" height="200">
+                <img src="img/neostrip.png">
+                <img src="img/ws2811.png">
+            </section>
+            <section>
+                <h3>Basic LEDS Need a lot of Wiring</h3>
+                <img src="img/led.png" height="300">
+            </section>
+            <section>
+                <h3>Addressable LEDs provide circuitry to communicate serially</h3>
+                <img src="img/WS2812_c.jpg" height="300">
+            </section>
+            <section>
+                <h3>Each pixel has a Red Green and Blue LED and an chip to receive, decode, drive LED’s and propagate data</h3>
+                <img src="img/rgb-smd-led-with-wit-integrated-ws2812b-chip-type.jpg" height="300">
+            </section>
+            <section>
+                <h3>They are chainable, fairly cheap and have their own resistors etc..</h3>
+                <img src="img/wall.jpg" height="400">
+                <h3>You can drive 1000's from 1 microcontroller</h3>
+            </section>
+            <section>
+                <p>Popular Types:</p>
+                <ul>
+                    <li>WS2812 & WS2811</li>
+                    <li>APA102 (The “Superled”)</li>
+                </ul>
+            </section>
+            <section>
+                <p>WS2812</p>
+            </section>
+
+            <section>
+                <p>Adafruit has branded these Neopixels</p>
+                <img src="img/ada.png">
+            </section>
+            <section>
+                <p>You can get them for half the price on Ebay as ws2812's</p>
+                <img src="img/ebay.png">
+            </section>
+            <section>
+                <p>APA102</p>
+                <a href="https://cpldcpu.wordpress.com/2014/08/27/apa102/">APA102 aka “Superled”</a>
+            </section>
+            <section>
+                <p>Adafruit has branded these Dotstars</p>
+                <img src="img/adadot.png">
+            </section>
+            <section>
+                <p>Adafruit has branded these Dotstars</p>
+                <img src="img/adadot.png">
+            </section>
+            <section>
+                APA102/DotStars</li>
+                <li>+ Extremely fast data1 and PWM2 rates, suitable for persistence-of-vision displays.</li>
+                <li>+ Easier to interface to a broader range of devices; no strict signal timing requirements.</li>
+                <li>+ Works with Servo library, tone() function, interrupts, etc.</li>
+                <li>– Slightly more expensive.</li>
+                <li>– Fewer available form factors; strips and flex matrices only.</li>
+                <li>– Needs two pins for control.</li>
+            </section>
+            <section>
+                <li>WS2812NeoPixels</li>
+                <li>+ More affordable.</li>
+                <li>+ Wide range of form-factors (pixels, rings, matrices, etc.).</li>
+                <li>+ Works from a single microcontroller pin.</li>
+                <li>– Strict 800 KHz data rate; not all systems can generate this, and speed is a bottleneck on very long strands.</li>
+                <li>– 400 Hz refresh/PWM rate not suitable for persistence-of-vision effects.</li>
+                <li>– Not compatible with interrupts (e.g. Arduino Servo library or tone() function).</li>
+            </section>
+            <section>
+                <p>Soldering</p>
+            </section>
+            <section>
+                <iframe src="<iframe width=" 560 " height="315 " src="https://www.youtube.com/embed/f95i88OSWB4?ecver=1 " frameborder="0 " allowfullscreen></iframe>" width="1000" height="542" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </section>
+            <section>
+                <p>Lets Practice</p>
+            </section>
+            <section>
+                <p>Ok, Now the real deal</p>
+                <img src="img/schem.png" height="400">
+                <p>Solder the Brown Wire to G, Yellow to 5V, Red to 13 and Orange to 11</p>
+            </section>
+            <section>
+                <p>Flip the Trinket over</p>
+                <img src="img/schem.png" height="400">
+                <p>Solder the brown wire of the power boost to the - Pad and Red wire to the + pad</p>
+            </section>
+            <section>
+                <p>Flip the Trinket over</p>
+                <img src="img/schem.png" height="400">
+                <p>Solder the brown wire of the power boost to the - Pad and Red wire to the + pad</p>
+            </section>
+            <section>
+                <p>Open the Dotstar->Strandtest example</p>
+                <img src="img/schem.png" height="400">
+                <p>Change the Data pin to 11 and the Cloock pin to 13</p>
+            </section>
+            <section>
+                <p>Programming Excersise</p><br>
+                <p>open excercise.ino from the code folder</p>
+            </section>
+            <section>
+                <p>FastLED</p><br>
+                <a href="http://fastled.io/">FastLED</a>
+            </section>
+            <section>
+                <p>Let's Construct the wand</p><br>
+            </section>
+            <section>
+                <p>POV</p><br>
+                <p>open poi.ino from the code folder and upload</p>
+            </section>
+        </div>
+    </div>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [{
+                src: 'lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            }, {
+                src: 'plugin/markdown/marked.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/markdown/markdown.js',
+                condition: function() {
+                    return !!document.querySelector('[data-markdown]');
+                }
+            }, {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                condition: function() {
+                    return !!document.querySelector('pre code');
+                },
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }, {
+                src: 'plugin/zoom-js/zoom.js',
+                async: true
+            }, {
+                src: 'plugin/notes/notes.js',
+                async: true
+            }]
+        });
+    </script>
+</body>
+
+</html>
